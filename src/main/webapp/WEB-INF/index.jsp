@@ -12,7 +12,91 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-primary bg-primary">
+    <a class="navbar-brand"><img src="score-1.png" class="img-fluid"> <p class="totalGold"> Your Gold <c:out value="${total}"/></p></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
 
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card shadow-lg mt-3 mb-3">
+                <img src="img/farm.png" alt="" class="card-img-top">
+                <h3 class="card-title">Farm</h3>
+                <div class="card-body">
+                    <p class="card-text">(earns 10-20 gold)</p>
+                </div>
+                <div class="card-footer">
+                    <form action="/submit" method="post">
+                        <input type="hidden" name="location" value="farm">
+                        <input type="submit" value="Find Gold" class="btn btn-primary btn-block">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg mt-3 mb-3">
+                <img src="img/farm.png" alt="" class="card-img-top">
+                <h3 class="card-title">Cave</h3>
+                <div class="card-body">
+                    <p class="card-text">(earns 5-10 gold)</p>
+                </div>
+                <div class="card-footer">
+                    <form action="/submit" method="post">
+                        <input type="hidden" name="location" value="cave">
+                        <input type="submit" value="Find Gold" class="btn btn-primary btn-block">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg mt-3 mb-3">
+                <img src="img/farm.png" alt="" class="card-img-top">
+                <h3 class="card-title">House</h3>
+                <div class="card-body">
+                    <p class="card-text">(earns 2-5 gold)</p>
+                </div>
+                <div class="card-footer">
+                    <form action="/submit" method="post">
+                        <input type="hidden" name="location" value="house">
+                        <input type="submit" value="Find Gold" class="btn btn-primary btn-block">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg mt-3 mb-3">
+                <img src="img/farm.png" alt="" class="card-img-top">
+                <h3 class="card-title">Casino</h3>
+                <div class="card-body">
+                    <p class="card-text">(earns -50-50 gold)</p>
+                </div>
+                <div class="card-footer">
+                    <form action="/submit" method="post">
+                        <input type="hidden" name="location" value="casino">
+                        <input type="submit" value="Find Gold" class="btn btn-primary btn-block">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="feed">
+            <ul>
+                <c:forEach items="${messageLists}" var="message">
+                    <li class='<c:out value="${message.getColor()}"/>'><c:out value="${message.getMessage()}"/></li>
+                </c:forEach>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
